@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero_value">0dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="marginTop_one">12dp</dimen>
+    <dimen name="marginTop_two">15dp</dimen>
+    <dimen name="default_height">100dp</dimen>
+    <dimen name="image_height">360dp</dimen>
+</resources>
