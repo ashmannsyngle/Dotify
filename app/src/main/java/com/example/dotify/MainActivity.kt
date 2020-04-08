@@ -17,9 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val editUsername = findViewById<TextView>(R.id.edit_username)
-        editUsername.visibility = View.GONE
-
         val noOfPlays = findViewById<TextView>(R.id.no_of_plays)
         val text = "$randomNumber plays"
         noOfPlays.text = text
@@ -43,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         val image = findViewById<ImageButton>(R.id.cover)
         image.setOnLongClickListener {image: View ->
-            val color = resources.getColor(R.color.red)
+            val color = ContextCompat.getColor(this, R.color.red)
             val username = findViewById<TextView>(R.id.username)
             username.setTextColor(color)
             val songName = findViewById<TextView>(R.id.song_name)

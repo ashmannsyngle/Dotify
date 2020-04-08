@@ -15,17 +15,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn_change_user"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btn_change_user" />
 
     <EditText
         android:id="@+id/edit_username"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/zero_value"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="John Doe"
         app:layout_constraintBottom_toBottomOf="@+id/btn_change_user"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btn_change_user" />
 
     <Button
@@ -44,29 +45,30 @@
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/marginTop_one"
         android:scaleType="fitCenter"
         android:src="@drawable/strangers_cover_art"
         app:layout_constraintTop_toBottomOf="@id/btn_change_user"
-        android:layout_marginTop="@dimen/marginTop_one"
         android:background="@null"
-        android:foreground="?selectableItemBackground"/>
+        android:foreground="?selectableItemBackground" />
 
     <TextView
         android:id="@+id/song_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="song_name"
+        android:text="Nobody Knows"
         android:textStyle="bold"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cover" />
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
 
     <TextView
         android:id="@+id/artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is me typing some random stuff still is goes out of the sdie sof the"
+        android:text="Russ"
+        tools:text="jasdbkda sbldkbajsdkjabskdb aljsd askjdb alskjdb askdjb akjsdb akjsbdaksjdb ajksdb alksjdb adjasdfsdfks dfk  sbldkajsbd"
         android:textSize="15sp"
         android:maxLines="1"
         android:ellipsize="end"
@@ -80,7 +82,6 @@
         android:layout_height="wrap_content"
         android:text="nothing"
         android:textSize="16sp"
-        android:layout_marginTop="@dimen/marginTop_two"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/artist_name" />
@@ -127,9 +128,7 @@
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/zero_value"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/guideline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
