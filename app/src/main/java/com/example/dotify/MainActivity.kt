@@ -1,21 +1,40 @@
 package com.example.dotify
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
-import org.w3c.dom.Text
+import com.ericchee.songdataprovider.Song
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
     private var randomNumber = Random.nextInt(10000, 100000)
 
+    companion object {
+        const val SONG_KEY = "SONG_KEY"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        intent.extras?.let {nonNullExtra ->
+//            if (nonNullExtra.containsKey(SONG_KEY)) {
+//
+//
+//            }
+//        }
+        val song = intent.getParcelableExtra<Song>(SONG_KEY)
+        if (song != null) {
+            song_name.text = song.title
+            cover.setImageResource(song.largeImageID)
+            artist_name.text = song.artist
+        }
+
+
 
         val noOfPlays = findViewById<TextView>(R.id.no_of_plays)
         val text = "$randomNumber plays"
