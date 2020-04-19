@@ -1,12 +1,16 @@
 package com.example.dotify
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.*
+import android.view.MenuItem
+import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.ericchee.songdataprovider.Song
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,11 +20,21 @@ class MainActivity : AppCompatActivity() {
         const val SONG_KEY = "SONG_KEY"
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val song = intent.getParcelableExtra<Song>(SONG_KEY)
         if (song != null) {
             song_name.text = song.title
