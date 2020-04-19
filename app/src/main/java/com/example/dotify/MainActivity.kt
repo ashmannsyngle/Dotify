@@ -2,7 +2,6 @@ package com.example.dotify
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
 import com.ericchee.songdataprovider.Song
@@ -21,12 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        intent.extras?.let {nonNullExtra ->
-//            if (nonNullExtra.containsKey(SONG_KEY)) {
-//
-//
-//            }
-//        }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val song = intent.getParcelableExtra<Song>(SONG_KEY)
         if (song != null) {
             song_name.text = song.title
@@ -34,31 +28,29 @@ class MainActivity : AppCompatActivity() {
             artist_name.text = song.artist
         }
 
-
-
         val noOfPlays = findViewById<TextView>(R.id.no_of_plays)
         val text = "$randomNumber plays"
         noOfPlays.text = text
 
         val playButton = findViewById<ImageButton>(R.id.media_play)
-        playButton.setOnClickListener {playButton: View ->
+        playButton.setOnClickListener {
             randomNumber++
             val text = "$randomNumber plays"
             noOfPlays.text = text
         }
 
         val prevButton = findViewById<ImageButton>(R.id.media_previous)
-        prevButton.setOnClickListener {prevButton: View ->
+        prevButton.setOnClickListener {
             Toast.makeText(this, "Skipping to previous track", Toast.LENGTH_SHORT).show()
         }
 
         val nextButton = findViewById<ImageButton>(R.id.media_next)
-        nextButton.setOnClickListener {nextButton: View ->
+        nextButton.setOnClickListener {
             Toast.makeText(this, "Skipping to next track", Toast.LENGTH_SHORT).show()
         }
 
         val image = findViewById<ImageButton>(R.id.cover)
-        image.setOnLongClickListener {image: View ->
+        image.setOnLongClickListener {
             val color = ContextCompat.getColor(this, R.color.red)
             val username = findViewById<TextView>(R.id.username)
             username.setTextColor(color)
@@ -66,29 +58,8 @@ class MainActivity : AppCompatActivity() {
             songName.setTextColor(color)
             val artistName = findViewById<TextView>(R.id.artist_name)
             artistName.setTextColor(color)
-            val plays = findViewById<TextView>(R.id.no_of_plays)
-            plays.setTextColor(color)
+            noOfPlays.setTextColor(color)
             true
-        }
-    }
-
-    fun changeUserClicked(view: View) {
-        val changeUsernameButton = findViewById<Button>(R.id.btn_change_user)
-        val username = findViewById<TextView>(R.id.username)
-        val editUsername = findViewById<EditText>(R.id.edit_username)
-        if (changeUsernameButton.text != "Apply") {
-            username.visibility = View.GONE
-            editUsername.visibility = View.VISIBLE
-            changeUsernameButton.text = "Apply"
-        } else {
-            username.text = editUsername.text.toString()
-            if (username.text == "") {
-                Toast.makeText(this, "Cannot apply if username is empty!", Toast.LENGTH_SHORT).show()
-            } else {
-                editUsername.visibility = View.GONE
-                username.visibility = View.VISIBLE
-                changeUsernameButton.text = "Change User"
-            }
         }
     }
 }

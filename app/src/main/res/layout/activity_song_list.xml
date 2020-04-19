@@ -27,12 +27,12 @@
         tools:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/white"
-        android:elevation="5dp"
-        android:padding="12dp">
+        android:elevation="@dimen/elevation_mini_player"
+        android:padding="@dimen/padding_song_list">
 
         <TextView
             android:id="@+id/tvPreviewSongTitle"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/zero_value"
             android:layout_height="wrap_content"
             tools:text="This is a placeholder which is very long so that I can test out ellipse"
             app:layout_constraintTop_toTopOf="parent"

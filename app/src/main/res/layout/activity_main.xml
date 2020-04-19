@@ -7,37 +7,6 @@
     android:padding="@dimen/default_padding"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="John Doe"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_change_user"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_change_user" />
-
-    <EditText
-        android:id="@+id/edit_username"
-        android:layout_width="@dimen/zero_value"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="John Doe"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_change_user"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_change_user" />
-
-    <Button
-        android:id="@+id/btn_change_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="changeUserClicked"
-        android:text="Change User"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
         android:id="@+id/cover"
         android:layout_width="@dimen/zero_value"
@@ -48,7 +17,7 @@
         android:layout_marginTop="@dimen/marginTop_one"
         android:scaleType="fitCenter"
         android:src="@drawable/strangers_cover_art"
-        app:layout_constraintTop_toBottomOf="@id/btn_change_user"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="@null"
         android:foreground="?selectableItemBackground" />
 
@@ -56,9 +25,9 @@
         android:id="@+id/song_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nobody Knows"
+        tools:text="Nobody Knows"
         android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline" />
@@ -67,8 +36,7 @@
         android:id="@+id/artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Russ"
-        tools:text="jasdbkda sbldkbajsdkjabskdb aljsd askjdb alskjdb askdjb akjsdb akjsbdaksjdb ajksdb alksjdb adjasdfsdfks dfk  sbldkajsbd"
+        tools:text="Russ"
         android:textSize="15sp"
         android:maxLines="1"
         android:ellipsize="end"
@@ -80,7 +48,7 @@
         android:id="@+id/no_of_plays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nothing"
+        tools:text="nothing"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -129,6 +97,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/guideline" />
+        app:layout_constraintGuide_percent="0.65"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

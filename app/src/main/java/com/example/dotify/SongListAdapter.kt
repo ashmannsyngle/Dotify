@@ -14,6 +14,7 @@ class SongListAdapter(listOfSongs: List<Song>, context: Context): RecyclerView.A
 
     private var listOfSongs: List<Song> = listOfSongs.toList()
     var onSongClickListener: ((song : Song) -> Unit)? = null
+    var onSongLongClickListener: ((song : Song) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_song, parent, false)
@@ -47,6 +48,12 @@ class SongListAdapter(listOfSongs: List<Song>, context: Context): RecyclerView.A
             itemView.setOnClickListener {
                 onSongClickListener?.invoke(song)
             }
+
+            itemView.setOnLongClickListener {
+                onSongLongClickListener?.invoke(song)
+                true
+            }
+
         }
     }
 }
