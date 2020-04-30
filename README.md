@@ -8,8 +8,8 @@ N/A
 ## Screenshots
 <img src="./screenshot2.png" alt="Screenshot of home screen" height="500" />
 <img src="./screenshot3.png" alt="Screenshot of song view" height="500" />
-<img src="./screenshot4.png" alt="Screenshot of rotated home screen" height="500" />
-<img src="./screenshot5.png" alt="Screenshot of rotated song view" height="500" />
+<img src="./screenshot4.png" alt="Screenshot of rotated home screen" />
+<img src="./screenshot5.png" alt="Screenshot of rotated song view" />
 
 
 ## Installation & Usage
