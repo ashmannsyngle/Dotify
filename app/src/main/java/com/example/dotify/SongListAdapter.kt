@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ericchee.songdataprovider.Song
 
-class SongListAdapter(listOfSongs: List<Song>, context: Context): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
+class SongListAdapter(listOfSongs: List<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
 
     private var listOfSongs: List<Song> = listOfSongs.toList()
     var onSongClickListener: ((song : Song) -> Unit)? = null

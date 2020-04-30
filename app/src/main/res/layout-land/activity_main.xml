@@ -1,83 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:padding="@dimen/default_padding"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_vertical">
-
-        <TextView
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="John Doe"
-            android:textStyle="bold"
-            tools:visibility="gone"
-            android:layout_weight="1"/>
-
-        <EditText
-            android:id="@+id/edit_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="John Doe"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/btn_change_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="changeUserClicked"
-            android:text="Change User" />
-    </LinearLayout>
+    android:background="@color/white">
 
     <ImageButton
         android:id="@+id/cover"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/image_height"
+        android:layout_width="@dimen/zero_value"
+        android:layout_height="@dimen/zero_value"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintRight_toRightOf="@id/guideline"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/marginTop_one"
         android:scaleType="fitCenter"
         android:src="@drawable/strangers_cover_art"
-        android:layout_marginTop="@dimen/marginTop_one"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="@null"
-        android:foreground="?selectableItemBackground"/>
+        android:foreground="?selectableItemBackground" />
 
     <TextView
         android:id="@+id/song_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="song_name"
+        tools:text="Nobody Knows"
         android:textStyle="bold"
-        android:textSize="30sp"
-        android:layout_gravity="center_horizontal"/>
+        android:textSize="25sp"
+        android:layout_marginTop="@dimen/margin_top_land"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is me typing some random stuff still is goes out of the sdie sof the"
+        tools:text="Russ"
         android:textSize="15sp"
         android:maxLines="1"
-        android:ellipsize="end" />
+        android:ellipsize="end"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_name" />
 
     <TextView
         android:id="@+id/no_of_plays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nothing"
+        tools:text="nothing"
         android:textSize="16sp"
-        android:layout_marginTop="@dimen/marginTop_two"
-        android:layout_gravity="center_horizontal"/>
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artist_name" />
 
     <LinearLayout
         android:id="@+id/media_controls_container"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="@dimen/default_height"
         android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/no_of_plays"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="@dimen/marginTop_one"
         android:gravity="center">
 
@@ -109,4 +94,12 @@
             android:foreground="?selectableItemBackground" />
 
     </LinearLayout>
-</LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
