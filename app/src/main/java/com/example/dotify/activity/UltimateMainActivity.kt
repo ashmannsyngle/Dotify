@@ -39,7 +39,6 @@ class UltimateMainActivity : AppCompatActivity(),
                 }
 
                 if (containsKey(SONG_LIST)) {
-                    Log.d("yes", "CONTAINS SONG LIST")
                     listOfSongs = getParcelableArrayList<Song>(SONG_LIST) as ArrayList<Song>
                     getSongListFragment()?.updateList(listOfSongs)
                 }
